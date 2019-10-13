@@ -10,9 +10,10 @@ A simple proof of concept deploying from A to Z:
 This project is leveraging Terraform for deploying all necessary components
 
 ## News
-* 2019-10-13 - v0.0.1 released! [[download](https://github.com)]
+* 2019-10-13 - v0.0.1 released! [[download](https://github.com/cdcloudlogix/cms_ecs_terraform/releases/tag/0.0.1)]
 
 ## Prerequisites
+* Access to an AWS Account
 * [Terraform v0.12.10](https://www.terraform.io/downloads.html)
 * [AWS Credentials](https://www.terraform.io/docs/providers/aws/index.html)
 * S3 Bucket for configuring Terraform backend
