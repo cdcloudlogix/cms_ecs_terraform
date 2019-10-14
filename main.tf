@@ -9,11 +9,11 @@ module "vpc" {
   database_subnets = ["10.2.21.0/24", "10.2.22.0/24"]
   public_subnets   = ["10.2.101.0/24", "10.2.102.0/24", "10.2.103.0/24"]
 
-  create_vpc                   = true
-  enable_nat_gateway           = true
-  single_nat_gateway           = true
-  enable_vpn_gateway           = false
-  one_nat_gateway_per_az       = false
+  create_vpc             = true
+  enable_nat_gateway     = true
+  single_nat_gateway     = true
+  enable_vpn_gateway     = false
+  one_nat_gateway_per_az = false
 
   tags = {
     Terraform   = "true"
@@ -30,24 +30,24 @@ module "security_groups" {
 module "rds" {
   source = "./modules/rds"
 
-  sg_cms_rds_id = module.security_groups.sg_cms_rds_id
+  sg_cms_rds_id      = module.security_groups.sg_cms_rds_id
   subnet_db_cms_name = module.vpc.database_subnet_group
-  rds_db_name = var.rds_db_name
-  rds_username = var.rds_username
-  rds_password = var.rds_password
+  rds_db_name        = var.rds_db_name
+  rds_username       = var.rds_username
+  rds_password       = var.rds_password
 }
 
 module "ecs" {
   source = "./modules/ecs"
 
-  region = var.region
-  vpc_id = module.vpc.vpc_id
-  sg_cms_ecs_id = module.security_groups.sg_cms_ecs_id
-  sg_cms_elb_id = module.security_groups.sg_cms_elb_id
-  public_subnets = module.vpc.public_subnets
+  region          = var.region
+  vpc_id          = module.vpc.vpc_id
+  sg_cms_ecs_id   = module.security_groups.sg_cms_ecs_id
+  sg_cms_elb_id   = module.security_groups.sg_cms_elb_id
+  public_subnets  = module.vpc.public_subnets
   private_subnets = module.vpc.private_subnets
-  rds_host = module.rds.db_instance_cms_endpoint
-  rds_db_name = var.rds_db_name
-  rds_username = var.rds_username
-  rds_password = var.rds_password
+  rds_host        = module.rds.db_instance_cms_endpoint
+  rds_db_name     = var.rds_db_name
+  rds_username    = var.rds_username
+  rds_password    = var.rds_password
 }
