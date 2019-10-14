@@ -30,7 +30,7 @@ Follow by apply:
 `terraform apply`
 
 Just reply `yes` if you're happy with the configuration and changes.
-This plan would run in `eu-west-1` region, use `cms-terraform-state-repository` S3 bucket name, use the `10.2.0.0/16` network by default. Don't hesitate to modify these values based on your need in [variable.tf file](https://github.com/cdcloudlogix/cms_ecs_terraform/blob/master/variables.tf).
+This plan would run in `eu-west-1` region, use `cms-terraform-state-repository` S3 bucket name, use the `10.2.0.0/16` network by default. Don't hesitate to modify these values based on your need in [variable.tf](https://github.com/cdcloudlogix/cms_ecs_terraform/blob/master/variables.tf) and in [main.tf](https://github.com/cdcloudlogix/cms_ecs_terraform/blob/master/main.tf) files.
 
 ## Verify
 After applying your changes, do the following command:
