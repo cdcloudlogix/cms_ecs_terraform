@@ -10,6 +10,7 @@ A simple proof of concept deploying from A to Z:
 This project is leveraging Terraform for deploying all necessary components
 
 ## News
+* 2019-10-14 - v0.0.2 released! [[download](https://github.com/cdcloudlogix/cms_ecs_terraform/releases/tag/0.0.2)]
 * 2019-10-13 - v0.0.1 released! [[download](https://github.com/cdcloudlogix/cms_ecs_terraform/releases/tag/0.0.1)]
 
 ## Prerequisites
