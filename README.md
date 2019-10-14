@@ -30,13 +30,13 @@ Follow by apply:
 `terraform apply`
 
 Just reply `yes` if you're happy with the configuration and changes.
-This plan would run in `eu-west-1` and use the `10.2.0.0/16` network by default. Don't hesitate to modify these values based on your need.
+This plan would run in `eu-west-1` region, use `cms-terraform-state-repository` S3 bucket name, use the `10.2.0.0/16` network by default. Don't hesitate to modify these values based on your need in [variable.tf file](https://github.com/cdcloudlogix/cms_ecs_terraform/blob/master/variables.tf).
 
 ## Verify
 After applying your changes, do the following command:
 `terraform show | grep dns_name`
 
-Collect the url, and you should be able to display Wordpress initial page.
+Collect the url, and you should be able to display Wordpress initial page. Be aware it could take 4 to 5 minutes to get WordPress to be up and running after applying Terraform.
 
 ## Cleanup
 The following command would allow you to cleanup your environment once you completed your testing:
